@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: monospace;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+.game {
+    width: 100vw;
+    height: 55vh;
+    background-image: url('./bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.falcon {
+    transition: 0.3s;
+    z-index: 1;
+}
+
+.tie {
+    z-index: 2;
+    position: absolute;
+}
+
+.buttons {
+    width: 100vw;
+    height: 45vh;
+    background-color: #2B2D42;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.buttons h1 {
+    position: absolute;
+    top: 0;
+    color: #EDF2F4;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.shoot {
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 130px;
+    font-size: 20px;
+    color: #EDF2F4;
+    margin-bottom: 50px;
+    border-radius: 50%;
+    background-color: #D90429;
+    box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.25);
+}
+
+.shoot:active, .left:active, .right:active {
+    box-shadow: inset 4px 4px 4px 2px rgba(0, 0, 0, 0.25);
+}
+
+.left, .right {
+    touch-action: manipulation;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    font-size: 20px;
+    color: #8D99AE;
+    border-radius: 50%;
+    background-color: #EDF2F4;
+    box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.25);
+}
+
+.left {
+    bottom: 20px;
+    left: 20px;
+}
+
+.right {
+    bottom: 20px;
+    right: 20px;
+}
+
+.laser {
+    z-index: 0;
+    height: 5px;
+    width: 15px;
+    background-color: #D90429;
+    border-radius: 10px;
+    position: absolute;
+    /* animation: laser0 1s linear; */
+}
+
+
+.finish {
+    z-index: 2;
+    height: 100vh;
+    top: 0;
+    width: 100vw;
+    background-color: #2B2D42;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.finish h1 {
+    color: #EDF2F4;
+    font-size: 50px;
+    font-weight: 100;
+    font-family: monospace;
+}
+
+/* merge in jos */
+@keyframes laser0 {
+    from {
+        transform: rotate(90deg) translateY(0);
+    } to {
+        transform:rotate(90deg) translateX(175px);
+    }
+}
+
+@keyframes laser1 {
+    from {
+        transform:  translateX(0);
+    } to {
+        transform: translateX(-180px);
+    }
+}
+
+@keyframes laser2 {
+    from {
+        transform: rotate(90deg) translateY(0);
+    } to {
+        transform:rotate(90deg) translateX(-180px);
+    }
+}
+
+@keyframes laser3 {
+    from {
+        transform:  translateX(0);
+    } to {
+        transform: translateX(180px);
+    }
+}
+
+
+@keyframes tie0 {
+    from {
+        transform: translateY(-175px);
+    } to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes tie1 {
+    from {
+        transform: translateY(175px);
+    } to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes tie2 {
+    from {
+        transform: translateX(180px);
+    } to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes tie3 {
+    from {
+        transform: translateX(-180px);
+    } to {
+        transform: translateX(0);
+    }
+}
